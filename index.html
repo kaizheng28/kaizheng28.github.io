@@ -13,70 +13,109 @@
             color: #333;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #fff;
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr; /* 1:3 ratio for main content to sidebar */
+            gap: 20px;
             padding: 20px;
-            border-radius: 8px;
+            grid-template-areas: 
+                "header header"
+                "side main"
+                "footer footer";
         }
 
-        img.profile-pic {
-            max-width: 200px;
-            display: block;
-            margin: 20px auto;
+        .header {
+            grid-area: header;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .side {
+            grid-area: side;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .side img {
+            max-width: 100%;
             border-radius: 50%;
+            display: block;
+            margin: 0 auto;
         }
 
-        ul.skills {
-            list-style-type: none;
-            padding: 0;
+        .footer {
+            grid-area: footer;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
         }
 
-        ul.skills li {
-            margin: 5px 0;
+        a {
+            color: #08f;
+            text-decoration: none;
         }
 
-        a.social-link {
-            margin-right: 10px;
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Biography</h1>
-        <img src="dog1.jpg" alt="Kai's Picture" class="profile-pic">
-        <p>
-            Hello! I'm Kai Zheng, a 4th year Ph.D. student at University of California San Diego, advised by Professor <a href="http://xyzhang.ucsd.edu//">Xinyu Zhang</a> . 
-            I received my master's degree from New York University and my bachelors' degree from Fudan University.
-            <br>
-            <br>
-            My research interest includes mmWave communication, wireless sensing and neurmorphic computing.
-        </p>
-
-        <h2>News</h2>
-        <ul class="News">
-            <li>Oct 2023. Our paper <b>NeuroRadar </b> is accepted by ACM SenSys 2023.</li>
-            <li>Mar 2023. Our paper <b>UniScatter: a Metamaterial Backscatter Tag for Wideband Joint Communication and Radar Sensing</b> is accepted by ACM MobiCom 2023.</li>
-        </ul>
-
-        <h2>Selected Publications</h2>
-        <ul class="Publications">
-            <li>Qian, Kun, Lulu Yao, <b>Kai Zheng</b>, Xinyu Zhang, and Tse Nga Ng. 
-                "UniScatter: a Metamaterial Backscatter Tag for Wideband Joint Communication and Radar Sensing." MobiCom. 2023.</li>
-            <li>Lulu Yao, <b>Kai Zheng</b>, Nandu Koripally, Naresh Eedugurala, Jason D. Azoulay, Xinyu Zhang, Tse Nga Ng. 
-                "Structural Pseudocapacitors with Reinforced Interfaces to Increase Multifunctional Efficiency." Science Advances. 2023.</li>    
-            <li>Renjie Zhao, Kejia Wang, <b>Kai Zheng</b>, Xinyu Zhang, Vincent Leung. 
-                "SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication." NSDI. 2023.</li>       
-            <li><b>Kai Zheng</b>, Aditya Dhananjay, Marco Mezzavilla, Arjuna Madanayake, et al. 
-                "Software-defined radios to accelerate mmwave wireless innovation." IEEE DySPAN. 2019.</li>                       
-                
-        </ul>
-
-        <h2>Connect with me</h2>
-
-        <a href="https://github.com/kaizheng28" class="social-link">GitHub</a>
+    <div class="grid-container">
+        <header class="header">Kai Zheng</header>
+        
+        <section class="main">
+            <h2>Bio</h2>
+            <p> Hello! I'm Kai Zheng, a 4th year Ph.D. student at University of California San Diego, advised by Professor <a href="http://xyzhang.ucsd.edu//">Xinyu Zhang</a>. 
+                I received my master's degree from New York University and my bachelors' degree from Fudan University.</p>
+                <br>
+                <br>
+                My research interest includes mmWave communication, wireless sensing and neurmorphic computing.    
+            <h2>News</h2>
+            <ul class="News">
+                <li>Oct 2023. Our paper <b>NeuroRadar </b> is accepted by ACM SenSys 2023.</li>
+                <li>Mar 2023. Our paper <b>UniScatter: a Metamaterial Backscatter Tag for Wideband Joint Communication and Radar Sensing</b> is accepted by ACM MobiCom 2023.</li>
+            </ul>
+    
+            <h2>Selected Publications</h2>
+            <ul class="Publications">
+                <li>Qian, Kun, Lulu Yao, <b>Kai Zheng</b>, Xinyu Zhang, and Tse Nga Ng. 
+                    "UniScatter: a Metamaterial Backscatter Tag for Wideband Joint Communication and Radar Sensing." MobiCom. 2023.</li>
+                <li>Lulu Yao, <b>Kai Zheng</b>, Nandu Koripally, Naresh Eedugurala, Jason D. Azoulay, Xinyu Zhang, Tse Nga Ng. 
+                    "Structural Pseudocapacitors with Reinforced Interfaces to Increase Multifunctional Efficiency." Science Advances. 2023.</li>    
+                <li>Renjie Zhao, Kejia Wang, <b>Kai Zheng</b>, Xinyu Zhang, Vincent Leung. 
+                    "SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication." NSDI. 2023.</li>       
+                <li><b>Kai Zheng</b>, Aditya Dhananjay, Marco Mezzavilla, Arjuna Madanayake, et al. 
+                    "Software-defined radios to accelerate mmwave wireless innovation." IEEE DySPAN. 2019.</li>                       
+                    
+            </ul>    
+        </section>
+        
+        <aside class="side">
+            <img src="me1.jpg" alt="Kai's Picture">
+            <h2>Kai Zheng</h2>
+            <ul>
+                <li>Ph.D. student at UC San Diego</li>
+                <li><a href="https://github.com/kaizheng28" class="social-link">GitHub</a></li>
+                <li><a href="https://scholar.google.com/citations?user=3EfyiU0AAAAJ&hl=en&authuser=1" class="social-link">Google Scholar</a></li>
+            </ul>
+        </aside>
+        
+        <footer class="footer">
+            Connect with me on 
+            <a href="https://github.com/kaizheng28" class="social-link">GitHub</a>
+        </footer>
     </div>
 </body>
 
