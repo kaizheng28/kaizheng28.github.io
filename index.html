@@ -12,12 +12,12 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-      .icon-link {
-        text-decoration: none;
-        color: black;
-        font-size: 18px;
-        margin-right: 10px;
-      }
+        .icon-link {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            margin-right: 10px;
+        }
 
         /* General Reset */
         body, ul, h1, h2, h4, p, nav, a {
@@ -26,19 +26,14 @@
             box-sizing: border-box;
         }
 
-        /* body {
-            font-family: Arial, sans-serif;
-            width: 1200px;
-            margin: auto;
-            background-color: #f4f4f4;
-            color: #333;
-            place-items: center;
-        } */
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            width: 990px;
+            margin-left: auto; 
+            margin-right: auto;
         }
 
         .grid-container {
@@ -49,6 +44,8 @@
             grid-template-areas: 
                 "header header"
                 "side main"
+                "dummy news"
+                "dummy pubs"
                 "footer footer";
         }
 
@@ -61,9 +58,34 @@
             font-size: 1.5em;
         }
 
+        /* The navigation bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            /*position: fixed;  Set the navbar to fixed position 
+             top: 0; Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
         .main {
             grid-area: main;
             background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .dummy {
+            grid-area: dummy;
+            background-color: #f9f9f9;
             padding: 20px;
         }
 
@@ -78,6 +100,18 @@
             border-radius: 50%;
             display: block;
             margin: 0 auto;
+        }
+
+        .news {
+            grid-area: news;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .pubs {
+            grid-area: pubs;
+            background-color: #f4f4f4;
+            padding: 20px;
         }
 
         .footer {
@@ -99,14 +133,28 @@
 
         p {
             line-height: 1.8;
+            font-size: 1.4em
         }
 
         h2 {
             font-size: 2.5em
         }
 
+        h3 {
+            font-size: 2.0em;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.5em;
+            font-family: "Times New Roman";
+            text-align: center;
+            color:dimgray;
+        }
+
         li {
-            margin: 10px 0;
+            font-size: 1.4em;
+            margin: 12px 0;
         }
     </style>
 </head>
@@ -114,33 +162,32 @@
 <body>
     <div class="grid-container">
         <header class="header">
+            <div class="navbar">
+                <a href="index.html"><b>Kai Zheng</b></a>
+                <a href="index.html">Home</a>
+                <a href="#news">News</a>
+                <a href="#pubs">Publications</a>
+              </div>
             <!-- <nav> <a href="index.html"style="color: white">Home</a> <a href="publication.html"style="color: white">Publications</a> <a href="index.html"style="color: white">About</a> </nav>--> 
-            <nav> <a href="index.html"style="color: white">Kai Zheng's Personal Page</a> </nav> 
+            <!-- <nav> <a href="index.html"style="color: white">Kai Zheng's Personal Page</a> </nav>  -->
         </header>
         
-        <section class="main">
-            <h2>Bio</h2>
-            <p> Hello! I'm Kai Zheng, a 5th year Ph.D. candidate at University of California San Diego, advised by Professor <a href="http://xyzhang.ucsd.edu//">Xinyu Zhang</a>. 
-                Before pursuing my Ph.D. degree, I worked as an engineer for <a href="https://www.pi-rad.io/home">Pi-Radio Inc.</a>, 
-                a spin-off from <a href="https://wireless.engineering.nyu.edu">NYU WIRELESS</a>.
-                I received my master's degree from New York University and my bachelors' degree from Fudan University.
-            </p>
-            <p> 
-                My research interests lies in wireless sensing and communication, with a focus on mmWave sensing/communciation and neuromorphic wireless systems.    
-            </p>
-            <h2>News</h2> 
+        <section class="news">
+            <h2>News</h2>
             <ul class="News">
                 <li>Apr 2024. Our paper <b>Enhancing mmWave Radar Sensing Using a Phased-MIMO Architecture</b> has been accepted by <i>ACM MobiSys 2024</i>.</li>
                 <li>Mar 2024. I just advanced to candidancy!</li>
                 <li>Jan 2024. I presented our 60GHz mmWave software radio platform at <i>Workshop on Enhanced Open Networked Airborne Computing</i>. </li>
                 <li>Nov 2023. <b>NeuroRadar</b> receives <font color="red">Best Paper Award</font> of <i>SenSys 2023</i>!</li>
                 <li>Oct 2023. Our paper <b>NeuroRadar: A Neuromorphic Radar Sensor for Low-Power IoT Systems</b> has been accepted by <i>ACM SenSys 2023</i>.</li>
-                <li>Jun 2023. We partnered with <b>pSemi</b> and presented a Demo of <b>a real-time mmWave joint-sensing and communication system</b> using pSemi's 24 GHz radio platform in <i>IMS 2023</i>.</li>
+                <!-- <li>Jun 2023. We partnered with <b>pSemi</b> and presented a Demo of <b>a real-time mmWave joint-sensing and communication system</b> using pSemi's 24 GHz radio platform in <i>IMS 2023</i>.</li>
                 <li>Mar 2023. Our paper <b>Structural Pseudocapacitors with Reinforced Interfaces to Increase Multifunctional Efficiency</b> has been accepted by <i>Science Advances</i>.</li>
                 <li>Mar 2023. Our paper <b>UniScatter: a Metamaterial Backscatter Tag for Wideband Joint Communication and Radar Sensing</b> has been accepted by <i>ACM MobiCom 2023</i>.</li>
-                <li>Dec 2022. Our paper <b>SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication</b> has been accepted by <i>NSDI 2023</i>.</li>
+                <li>Dec 2022. Our paper <b>SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication</b> has been accepted by <i>NSDI 2023</i>.</li> -->
             </ul>
-    
+        </section>
+
+        <section class="pubs">
             <h2>Selected Publications</h2>
             <ul class="Publications">
                 <li> <b>Enhancing mmWave Radar Sensing Using a Phased-MIMO Architecture</b> <br>
@@ -180,11 +227,25 @@
                 </li>                    
             </ul>    
         </section>
+
+        <section class="main">
+            <h2>Bio</h2>
+            <p> Hello! I'm Kai Zheng, a 5th year Ph.D. candidate at University of California San Diego, advised by Professor <a href="http://xyzhang.ucsd.edu//">Xinyu Zhang</a>. 
+                Before pursuing my Ph.D. degree, I worked as an engineer for <a href="https://www.pi-rad.io/home">Pi-Radio Inc.</a>, 
+                a spin-off from <a href="https://wireless.engineering.nyu.edu">NYU WIRELESS</a>.
+                I received my master's degree from New York University and my bachelors' degree from Fudan University.
+            </p>
+            <p> 
+                My research interests lies in wireless sensing and communication, with a focus on mmWave sensing/communciation and neuromorphic wireless systems.    
+            </p>
+
+        </section>
         
         <section class="side">
             <img src="me1.jpg" alt="Kai's Picture">
-            <h1>Kai Zheng</h1>
-            <h4> Ph.D. Candidate at UC San Diego</h4>
+            <h3>Kai Zheng</h3>
+            <h4> Ph.D. Candidate </h4>
+            <h4> UC San Diego </h4>
             <p><a href="https://github.com/yourprofile" class="icon-link"><i class="fab fa-github"></i> GitHub</a></p>
             <p><a href="https://scholar.google.com/citations?user=yourprofile" class="icon-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a></p>
         </section>
