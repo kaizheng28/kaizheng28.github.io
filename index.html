@@ -13,16 +13,9 @@
     <style>
         .icon-link {
             text-decoration: none;
-            color: black;
+            color: rgb(90, 90, 190);
             font-size: 24px;
             margin-right: 10px;
-        }
-
-        /* General Reset */
-        body, ul, h1, h2, h4, p, nav, a {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -60,19 +53,11 @@
             padding: 20px;
             grid-template-areas: 
                 /* "header header" */
-                "side main"
-                "dummy news"
-                "dummy pubs"
+                "side bio"
+                "news news"
+                "projects projects"
+                "pubs pubs"
                 "footer footer";
-        }
-
-        .header {
-            grid-area: header;
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: left;
-            font-size: 1.5em;
         }
 
         /* The navigation bar */
@@ -138,8 +123,8 @@
             font-size: 30px;
         }
 
-        .main {
-            grid-area: main;
+        .bio {
+            grid-area: bio;
             background-color: #f4f4f4;
             padding: 20px;
         }
@@ -152,7 +137,7 @@
 
         .side {
             grid-area: side;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             padding: 20px;
         }
 
@@ -169,6 +154,41 @@
             padding: 20px;
         }
 
+        .projects {
+            grid-area: projects;
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            /* align-items: center; */
+            flex-direction: column; /* Stack projects vertically */
+            gap: 20px; /* Space between image and text */
+        }
+
+        .projects-item {
+            display: flex;
+            /* align-items: center; */
+            /* flex-direction: column; Title on top of the image and description */
+            gap: 20px; /* Space between image and text */
+        }
+
+        .projects-item img {
+            max-width: 40%;
+            /* height: auto; */
+            /* display: block; */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            /* margin: 0 auto; */
+        }
+
+        .projects-description {
+            max-width: 60%; /* Adjust as needed */
+        }
+
+        .projects-description p {
+            line-height: 1.8;
+            font-size: 1.1em
+        }
+
         .pubs {
             grid-area: pubs;
             background-color: #f4f4f4;
@@ -181,6 +201,15 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+        }
+    </style>
+
+    <style>
+        /* General Reset */
+        ul, h1, h2, h4, p, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         a {
@@ -198,13 +227,15 @@
         }
 
         h2 {
+            text-align: left;
             font-size: 2.5em
         }
 
         h3 {
-            font-size: 2.0em;
-            text-align: center;
+            font-size: 1.8em;
+            text-align: left;
             margin: 6px 0;
+            color:dimgray;
         }
 
         h4 {
@@ -213,6 +244,12 @@
             text-align: center;
             color:dimgray;
             margin: 3px 0;
+        }
+
+        h5 {
+            font-size: 2.0em;
+            text-align: center;
+            margin: 6px 0;
         }
 
         li {
@@ -242,7 +279,7 @@
             <a href="index.html"><b>Kai Zheng</b></a>
             <a href="index.html">Home</a>
             <a href="#news">News</a>
-            <a href="#pubs">Publications</a>
+            <a href="publication.html">Publications</a>
         </ul>
     </div>
 </nav>
@@ -251,10 +288,8 @@
             <!-- <nav> <a href="index.html"style="color: white">Home</a> <a href="publication.html"style="color: white">Publications</a> <a href="index.html"style="color: white">About</a> </nav>--> 
             <!-- <nav> <a href="index.html"style="color: white">Kai Zheng's Personal Page</a> </nav>  -->
     <div class="grid-container">
-        <!-- <header class="header">
 
-        </header> -->
-        <section class="main">
+        <section class="bio">
             <h2>Bio</h2>
             <p> Hello! I'm Kai Zheng, a 5th year Ph.D. candidate at University of California San Diego, advised by Professor <a href="http://xyzhang.ucsd.edu//">Xinyu Zhang</a>. 
                 Before pursuing my Ph.D. degree, I worked as an engineer for <a href="https://www.pi-rad.io/home">Pi-Radio Inc.</a>, 
@@ -268,8 +303,8 @@
         </section>
         
         <section class="side">
-            <img src="me2.jpg" alt="Kai's Picture">
-            <h3>Kai Zheng</h3>
+            <img src="my_photo/me2.jpg" alt="Kai's Picture">
+            <h5>Kai Zheng</h5>
             <h4> Ph.D. Candidate </h4>
             <h4> UC San Diego </h4>
             <p>
@@ -294,15 +329,44 @@
                 <li>Dec 2022. Our paper <b>SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication</b> has been accepted by <i>NSDI 2023</i>.</li> -->
             </ul>
         </section>
+        
+        <section class="projects"> 
+            <h2>Featured Research</h2>
+            <h3> Enhancing mmWave Radar Sensing with Array of Phased Arrays </h3>
+            <div class="projects-item">
+                <img src="hyb_radar/multiple.png" alt="Hybrid Beamforming Radar">
+                <div class="projects-description">
+                    <p>
+                        Millimeter-wave (mmWave) radar has become instrumental in diverse consumer applications. 
+                        However, current mmWave radar suffers from limited angular resolution due the limited number of antennas.
+                        In this research project, we introduce a novel mmWave phased-MIMO radar platform that enables hundreds of antennas. 
+                        We further study the layout of a sparse array of phased array to achieve high angular resolution.
+                    </p>
+                </div>
+            </div>
+
+            <h3> Neuromorphic Radar Sensing for IoT Systems </h3>
+            <div class="projects-item">
+                <img src="neuro_radar/neuro_radar.jpg" alt="Neuromorphic Radar">
+                <div class="projects-description">
+                    <p>
+                        Radar sensors have recently been explored in the industrial and consumer Internet of Things (IoT). 
+                        However, such applications often require self-sustainable or untethered operations, which are at odds with the high power consumption of radar. 
+                        This paper proposes NEURORADAR, a neuromorphic radar sensor, to achieve low-power wireless sensing.
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <section class="pubs">
-            <h2>Selected Publications</h2>
+            <h2>Recent Publications</h2>
             <ul class="Publications">
                 <li> <b>Enhancing mmWave Radar Sensing Using a Phased-MIMO Architecture</b> <br>
                     <b>Kai Zheng</b>, Wuqiong Zhao, Timothy Woodford, Renjie Zhao, Xinyu Zhang, and Yingbo Hua. <br>
                     The 22nd Annual International Conference on Mobile Systems, Applications and Services (<b>MobiSys</b>). 2024. <br>
                     (Acceptance Rate: 16.3%, 43 of 263).<br>
                     <a href="/paper/mobisys24-hybRadar.pdf">[PDF]</a>. 
+                    <a href="/slides/Mobisys24_HybRadar_15-17min.pptx">[PPTX]</a>.
                 </li>    
                 <li> <b>NeuroRadar: A Neuromorphic Radar Sensor for Low-Power IoT Systems</b> (<font color="red">Best Paper Award</font>)<br>
                     <b>Kai Zheng</b>, Kun Qian, Timothy Woodford, and Xinyu Zhang. <br>
@@ -317,27 +381,15 @@
                     (Acceptance Rate: 29.4%, 40 of 136). <br>
                     <a href="/paper/mobicom23-uniscatter.pdf">[PDF]</a>. 
                 </li> 
-                <li> <b>Structural Pseudocapacitors with Reinforced Interfaces to Increase Multifunctional Efficiency</b><br>
-                    Lulu Yao, <b>Kai Zheng</b>, Nandu Koripally, Naresh Eedugurala, Jason D. Azoulay, Xinyu Zhang, Tse Nga Ng. <br>
-                    <b>Science Advances</b>. 2023. <br>
-                    <a href="/paper/sciadv-structural-cap.pdf">[PDF]</a>.
-                </li>
                 <li> <b>SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication</b><br>
                     Renjie Zhao, Kejia Wang, <b>Kai Zheng</b>, Xinyu Zhang, Vincent Leung. <br>
                     The 20th USENIX Symposium on Networked Systems Design and Implementation (<b>NSDI</b>). 2023. <br>
                     (Acceptance Rate: 16.0%, 46 of 288). <br>
                      <a href="/paper/nsdi23-slimWiFi.pdf">[PDF]</a>.
-                    </li>
-                <li> <b>Software-defined Radios to Accelerate mmWave Wireless Innovation</b><br>
-                    <b>Kai Zheng</b>, Aditya Dhananjay, Marco Mezzavilla, Arjuna Madanayake, et al. <br>
-                    The IEEE International Symposium on Dynamic Spectrum Access Networks (<b>DySPAN</b>). 2019.<br>
-                    <a href="/paper/dyspan19-sdr.pdf">[PDF]</a>.
-                </li>                    
+                </li>               
             </ul>    
         </section>
-
-
-        
+   
         <footer class="footer">
             Copyright © Kai Zheng 2024
         </footer>

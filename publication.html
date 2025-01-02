@@ -4,15 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kai Zheng / Ph.D. Student</title>
+    <meta name="description" content="Kai Zheng - Ph.D. Candidate at UC San Diego. Research in wireless sensing, mmWave communication, and neuromorphic systems.">
+    <meta name="keywords" content="Kai Zheng, Ph.D., UCSD, mmWave, wireless sensing, neuromorphic systems">
+    <meta name="author" content="Kai Zheng">
+    <title>Kai Zheng | Ph.D. Candidate</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        .icon-link {
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        /* General Reset */
+        body, ul, h1, h2, h4, p, nav, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            width: 960px;
-            margin: auto;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
-            place-items: center;
+            line-height: 1.6;
+            width: 100%;
+            padding-top: 60px;
+            /* top: 1000px;  */
+            /* height: 100%; */
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                color: #333;
+                line-height: 1.6;
+                width: 1200px;
+                padding-top: 60px;
+                /* top: 1000px;  */
+                height: 100%;
+                margin-left: auto; 
+                margin-right: auto;
+            }
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr; /* 1:3 ratio for main content to sidebar */
+            gap: 20px;
+            padding: 20px;
+            grid-template-areas: 
+                /* "header header" */
+                "side main"
+                "dummy news"
+                "dummy pubs"
+                "footer footer";
         }
 
         .header {
@@ -20,12 +71,96 @@
             background-color: #333;
             color: #fff;
             padding: 20px;
-            text-align: center;
+            text-align: left;
             font-size: 1.5em;
+        }
+
+        /* The navigation bar */
+        nav {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;  
+            top: 0; /* Position the navbar at the top of the page */
+            left: 0;
+            width: 100%; /* Full width */
+        }
+
+        /* Navigation bar container */
+        nav .container {
+            max-width: 1200px;  /* Restricts the content width */
+            margin: 0 auto; /* Centers the container */
+            padding: 0 20px; /* Horizontal padding for spacing */
+            display: flex;
+            justify-content: space-between; /* Adjust alignment */
+            align-items: center;
+        }
+
+        /* Navigation links styling */
+        nav .nav-links {
+            display: flex;
+            gap: 30px; /* Spacing between links */
+            list-style: none;
+            padding: 15px;
+            margin: 0;
+        }
+
+        nav .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+
+        nav .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        nav .logo {
+            display: flex;
+            gap: 40px; /* Spacing between links */
+            list-style: none;
+            padding: 15px;
+            margin: 0;
+        }
+
+        nav .logo a {
+            text-decoration: none;
+            color: white;
+            font-size: 30px;
         }
 
         .main {
             grid-area: main;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .dummy {
+            grid-area: dummy;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .side {
+            grid-area: side;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .side img {
+            max-width: 100%;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .news {
+            grid-area: news;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .pubs {
+            grid-area: pubs;
             background-color: #f4f4f4;
             padding: 20px;
         }
@@ -46,32 +181,96 @@
         a:hover {
             text-decoration: underline;
         }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.4em
+        }
+
+        h2 {
+            font-size: 2.5em
+        }
+
+        h3 {
+            font-size: 2.0em;
+            text-align: center;
+            margin: 6px 0;
+        }
+
+        h4 {
+            font-size: 1.5em;
+            font-family: "Times New Roman";
+            text-align: center;
+            color:dimgray;
+            margin: 3px 0;
+        }
+
+        li {
+            font-size: 1.4em;
+            margin: 12px 0;
+        }
     </style>
 </head>
 
+<nav>
+    <div class="container">
+        <!-- <ul class="logo">
+            
+        </ul> -->
+        <ul class="nav-links">
+            <a href="index.html"><b>Kai Zheng</b></a>
+            <a href="index.html">Home</a>
+            <a href="#news">News</a>
+            <a href="#pubs">Publications</a>
+        </ul>
+    </div>
+</nav>
+
 <body>
-    <header class="header">
-        <nav> <a href="index.html"style="color: white">Home</a> <a href="index.html"style="color: white">Publications</a> <a href="index.html"style="color: white">About</a> </nav> 
-    </header>
     
     <section class="main">
         <h2> Publications</h2>
         <ul class="Publications">
-            <li><b>Kai Zheng</b>, Kun Qian, Timothy Woodford, and Xinyu Zhang. 
-                "NeuroRadar: A Neuromorphic Radar Sensor for Low-Power IoT Systems." SenSys. 2023. (Acceptance Rate: 29.4%, 34 of 179). </li> <a href="/paper/sensys23-NeuroRadar.pdf">[PDF]</a>.
-            <li>Kun Qian, Lulu Yao, <b>Kai Zheng</b>, Xinyu Zhang, and Tse Nga Ng. 
-                "UniScatter: a Metamaterial Backscatter Tag for Wideband Joint Communication and Radar Sensing." MobiCom. 2023. (Acceptance Rate: 19.0%, 40 of 136). </li> <a href="/paper/mobicom23-uniscatter.pdf">[PDF]</a>.
-            <li>Lulu Yao, <b>Kai Zheng</b>, Nandu Koripally, Naresh Eedugurala, Jason D. Azoulay, Xinyu Zhang, Tse Nga Ng. 
-                "Structural Pseudocapacitors with Reinforced Interfaces to Increase Multifunctional Efficiency." Science Advances. 2023.</li> <a href="/paper/sciadv-structural-cap.pdf">[PDF]</a>.    
-            <li>Renjie Zhao, Kejia Wang, <b>Kai Zheng</b>, Xinyu Zhang, Vincent Leung. 
-                "SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication." NSDI. 2023. (Acceptance Rate: 16.0%, 46 of 288) . </li> <a href="/paper/nsdi23-slimWiFi.pdf">[PDF]</a>.
-            <li><b>Kai Zheng</b>, Aditya Dhananjay, Marco Mezzavilla, Arjuna Madanayake, et al. 
-                "Software-defined radios to accelerate mmwave wireless innovation." IEEE DySPAN. 2019.</li>                    
+            <li> <b>Enhancing mmWave Radar Sensing Using a Phased-MIMO Architecture</b> <br>
+                <b>Kai Zheng</b>, Wuqiong Zhao, Timothy Woodford, Renjie Zhao, Xinyu Zhang, and Yingbo Hua. <br>
+                The 22nd Annual International Conference on Mobile Systems, Applications and Services (<b>MobiSys</b>). 2024. <br>
+                (Acceptance Rate: 16.3%, 43 of 263).<br>
+                <a href="/paper/mobisys24-hybRadar.pdf">[PDF]</a>. 
+            </li>    
+            <li> <b>NeuroRadar: A Neuromorphic Radar Sensor for Low-Power IoT Systems</b> (<font color="red">Best Paper Award</font>)<br>
+                <b>Kai Zheng</b>, Kun Qian, Timothy Woodford, and Xinyu Zhang. <br>
+                The 21th ACM Conference on Embedded Networked Sensor Systems (<b>SenSys</b>). 2023. <br>
+                (Acceptance Rate: 19%, 34 of 179).<br>
+                <a href="/paper/sensys23-NeuroRadar.pdf">[PDF]</a>. 
+                <a href="/slides/Sensys23_NeuroRadar_14+3min.pptx">[PPTX]</a>.
+            </li>
+            <li> <b>UniScatter: a Metamaterial Backscatter Tag for Wideband Joint Communication and Radar Sensing</b><br>
+                Kun Qian, Lulu Yao, <b>Kai Zheng</b>, Xinyu Zhang, and Tse Nga Ng. <br>
+                The 29th Annual International Conference On Mobile Computing And Networking (<b>MobiCom</b>). 2023. <br>
+                (Acceptance Rate: 29.4%, 40 of 136). <br>
+                <a href="/paper/mobicom23-uniscatter.pdf">[PDF]</a>. 
+            </li> 
+            <li> <b>Structural Pseudocapacitors with Reinforced Interfaces to Increase Multifunctional Efficiency</b><br>
+                Lulu Yao, <b>Kai Zheng</b>, Nandu Koripally, Naresh Eedugurala, Jason D. Azoulay, Xinyu Zhang, Tse Nga Ng. <br>
+                <b>Science Advances</b>. 2023. <br>
+                <a href="/paper/sciadv-structural-cap.pdf">[PDF]</a>.
+            </li>
+            <li> <b>SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication</b><br>
+                Renjie Zhao, Kejia Wang, <b>Kai Zheng</b>, Xinyu Zhang, Vincent Leung. <br>
+                The 20th USENIX Symposium on Networked Systems Design and Implementation (<b>NSDI</b>). 2023. <br>
+                (Acceptance Rate: 16.0%, 46 of 288). <br>
+                 <a href="/paper/nsdi23-slimWiFi.pdf">[PDF]</a>.
+                </li>
+            <li> <b>Software-defined Radios to Accelerate mmWave Wireless Innovation</b><br>
+                <b>Kai Zheng</b>, Aditya Dhananjay, Marco Mezzavilla, Arjuna Madanayake, et al. <br>
+                The IEEE International Symposium on Dynamic Spectrum Access Networks (<b>DySPAN</b>). 2019.<br>
+                <a href="/paper/dyspan19-sdr.pdf">[PDF]</a>.
+            </li>                    
         </ul>    
     </section>
     
     <footer class="footer">
-        Copyright © Kai Zheng 2023
+        Copyright © Kai Zheng 2024
     </footer>
 </body>
 
