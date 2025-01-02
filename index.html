@@ -125,7 +125,7 @@
 
         .bio {
             grid-area: bio;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             padding: 20px;
         }
         
@@ -137,7 +137,7 @@
 
         .side {
             grid-area: side;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             padding: 20px;
         }
 
@@ -150,13 +150,13 @@
 
         .news {
             grid-area: news;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             padding: 20px;
         }
 
         .projects {
             grid-area: projects;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             padding: 20px;
             display: flex;
             /* align-items: center; */
@@ -191,7 +191,7 @@
 
         .pubs {
             grid-area: pubs;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             padding: 20px;
         }
 
@@ -279,7 +279,8 @@
             <a href="index.html"><b>Kai Zheng</b></a>
             <a href="index.html">Home</a>
             <a href="#news">News</a>
-            <a href="publication.html">Publications</a>
+            <a href="#research">Research</a>
+            <a href="#pubs">Publications</a>
         </ul>
     </div>
 </nav>
@@ -315,7 +316,7 @@
             </p>
         </section>
 
-        <section class="news">
+        <section id=news class="news">
             <h2>News</h2>
             <ul class="News">
                 <li>Apr 2024. Our paper <b>Enhancing mmWave Radar Sensing Using a Phased-MIMO Architecture</b> has been accepted by <i>ACM MobiSys 2024</i>.</li>
@@ -330,7 +331,7 @@
             </ul>
         </section>
         
-        <section class="projects"> 
+        <section id=research class="projects"> 
             <h2>Featured Research</h2>
             <h3> Enhancing mmWave Radar Sensing with Array of Phased Arrays </h3>
             <div class="projects-item">
@@ -341,6 +342,7 @@
                         However, current mmWave radar suffers from limited angular resolution due the limited number of antennas.
                         In this research project, we introduce a novel mmWave phased-MIMO radar platform that enables hundreds of antennas. 
                         We further study the layout of a sparse array of phased array to achieve high angular resolution.
+                        <a href="/paper/mobisys24-hybRadar.pdf">[PDF]</a>.
                     </p>
                 </div>
             </div>
@@ -352,14 +354,15 @@
                     <p>
                         Radar sensors have recently been explored in the industrial and consumer Internet of Things (IoT). 
                         However, such applications often require self-sustainable or untethered operations, which are at odds with the high power consumption of radar. 
-                        This paper proposes NEURORADAR, a neuromorphic radar sensor, to achieve low-power wireless sensing.
+                        We propose a low-power neuromorphic radar sensor that produces spikes and can directly interface with spiking neural networks emulated on neuromorphic computers. 
+                        <a href="/paper/sensys23-NeuroRadar.pdf">[PDF]</a>. 
                     </p>
                 </div>
             </div>
         </section>
 
-        <section class="pubs">
-            <h2>Recent Publications</h2>
+        <section id=pubs class="pubs">
+            <h2>Recent Publications <a href="publication.html">[Full List]</a> </h2>
             <ul class="Publications">
                 <li> <b>Enhancing mmWave Radar Sensing Using a Phased-MIMO Architecture</b> <br>
                     <b>Kai Zheng</b>, Wuqiong Zhao, Timothy Woodford, Renjie Zhao, Xinyu Zhang, and Yingbo Hua. <br>
