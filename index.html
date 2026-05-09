@@ -358,6 +358,7 @@
         <section id=news class="news">
             <h2>News</h2>
             <ul class="News">
+                <li>Nov 2025. Our paper <b>Physically Accurate Differentiable Inverse Rendering for Radio Frequency Digital Twin</b> has been accepted by <i>MobiCom</i>.</li>
                 <li>Oct 2025. Our paper <b>MetaPolar: A Low-Cost, Passive, mmWave Radar-Readable Metasurface Road Sign</b> has been accepted by <i>SenSys 2026</i>.</li>
                 <li>Aug 2025. I successfully defended my doctoral thesis!</li>
                 <li>Aug 2025. I will be joining Samsung Research America as a Senior Research Engineer.</li>
@@ -372,6 +373,21 @@
         
         <section id=research class="projects"> 
             <h2>Featured Research</h2>
+            <h3> mmWave MetaSurface Road Signs </h3>
+            <div class="projects-item">
+                <img src="meta_polar/metapolar.png" alt="MetaSurface Road Signs">
+                <div class="projects-description">
+                    <p>
+                        We present MetaPolar, a fully passive mmWave metasurface tag for robust Infrastructure-to-Vehicle (I2V) communication with standard automotive radars.
+                        MetaPolar exploits the polarization domain via engineered split-ring resonators and a crossed-dipole layer to generate distinct 2×2 polarimetric RCS signatures.
+                        A semi-retroreflective design maintains reliable decoding across a ±7.5° field of view.
+                        Implemented on low-cost FR-4 PCBs (&lt;$3/tag), MetaPolar achieves 2-bit encoding per tag (scalable to 2<sup>N</sup> bits with N tags), simultaneous multi-tag reading, and seamless integration into existing radar pipelines.
+                        <a href="https://doi.org/10.1145/3774906.3800464">[LINK]</a>.
+                        <a href="/paper/sensys26-MetaPolar.pdf">[PDF]</a>.
+                    </p>
+                </div>
+            </div>
+            
             <h3> mmWave Phased-MIMO Radar with Massive Antennas </h3>
             <div class="projects-item">
                 <img src="hyb_radar/multiple.png" alt="Hybrid Beamforming Radar">
@@ -404,41 +420,13 @@
 
         <section id=pubs class="pubs">
             <h2>Recent Publications <a href="publication.html">[Full List]</a> </h2>
-            <ul class="Publications">
-                <li> <b>NEAR: Neural Electromagnetic Array Response</b> <br>
-                    Yinyan Bu, Jiajie Yu, <b>Kai Zheng</b>, Xinyu Zhang, and Piya Pal. <br>
-                    Forty-Second International Conference on Machine Learning (<b>ICML</b>). 2025. <br>
-                    (Acceptance Rate: 26.9%, 3,260 of 12,107).<br>
-                    <a href="/paper/icml25-near.pdf">[PDF]</a>. 
-                </li>  
-                <li> <b>Enhancing mmWave Radar Sensing Using a Phased-MIMO Architecture</b> <br>
-                    <b>Kai Zheng</b>, Wuqiong Zhao, Timothy Woodford, Renjie Zhao, Xinyu Zhang, and Yingbo Hua. <br>
-                    The 22nd Annual International Conference on Mobile Systems, Applications and Services (<b>MobiSys</b>). 2024. <br>
-                    (Acceptance Rate: 16.3%, 43 of 263).<br>
-                    <a href="/paper/mobisys24-hybRadar.pdf">[PDF]</a>. 
-                    <a href="/slides/Mobisys24_HybRadar_15-17min.pptx">[PPTX]</a>.
-                </li>    
-                <li> <b>NeuroRadar: A Neuromorphic Radar Sensor for Low-Power IoT Systems</b> (<font color="red">Best Paper Award</font>)<br>
-                    <b>Kai Zheng</b>, Kun Qian, Timothy Woodford, and Xinyu Zhang. <br>
-                    The 21th ACM Conference on Embedded Networked Sensor Systems (<b>SenSys</b>). 2023. <br>
-                    (Acceptance Rate: 19%, 34 of 179).<br>
-                    <a href="/paper/sensys23-NeuroRadar.pdf">[PDF]</a>. 
-                    <a href="/slides/Sensys23_NeuroRadar_14+3min.pptx">[PPTX]</a>.
-                </li>
-                <li> <b>UniScatter: a Metamaterial Backscatter Tag for Wideband Joint Communication and Radar Sensing</b><br>
-                    Kun Qian, Lulu Yao, <b>Kai Zheng</b>, Xinyu Zhang, and Tse Nga Ng. <br>
-                    The 29th Annual International Conference On Mobile Computing And Networking (<b>MobiCom</b>). 2023. <br>
-                    (Acceptance Rate: 29.4%, 40 of 136). <br>
-                    <a href="/paper/mobicom23-uniscatter.pdf">[PDF]</a>. 
-                </li> 
-                <li> <b>SlimWiFi: Ultra-Low-Power IoT Radio Architecture Enabled by Asymmetric Communication</b><br>
-                    Renjie Zhao, Kejia Wang, <b>Kai Zheng</b>, Xinyu Zhang, Vincent Leung. <br>
-                    The 20th USENIX Symposium on Networked Systems Design and Implementation (<b>NSDI</b>). 2023. <br>
-                    (Acceptance Rate: 16.0%, 46 of 288). <br>
-                     <a href="/paper/nsdi23-slimWiFi.pdf">[PDF]</a>.
-                </li>            
-            </ul>    
+            <ul id="recent-pubs" class="Publications"></ul>
         </section>
+        <script src="publications.js"></script>
+        <script>
+            const target = document.getElementById('recent-pubs');
+            PUBLICATIONS.slice(0, 5).forEach(li => target.innerHTML += li);
+        </script>
    
         <footer class="footer">
             Copyright © Kai Zheng 2025
