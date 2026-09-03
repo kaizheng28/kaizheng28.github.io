@@ -1,4 +1,9 @@
 const PUBLICATIONS = [
+    `<li> <b>FlowForm: Scalable Passive Metasurface Network for mmWave Coverage Expansion</b> <br>
+        Wuqiong Zhao, Baicheng Chen, <b>Kai Zheng</b>, Xingyu Chen, Wenqian Zhang, and Xinyu Zhang. <br>
+        The ACM SIGCOMM Conference (<b>SIGCOMM</b>). 2026. <br>
+        <a href="https://doi.org/10.1145/3789240.3829102">[LINK]</a>.
+    </li>`,
     `<li> <b>Physically Accurate Differentiable Inverse Rendering for Radio Frequency Digital Twin</b> <br>
         Xingyu Chen, Xinyu Zhang, <b>Kai Zheng</b>, Xinmin Fang, Tzu-Mao Li, Chris Xiaoxuan Lu, and Zhengxiong Li. <br>
         The ACM International Conference on Mobile Computing and Networking (<b>MobiCom</b>). 2026. <br>
